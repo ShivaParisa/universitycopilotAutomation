@@ -729,7 +729,7 @@ public class Vgutest  extends BaseTest{
     homePage.clickYesInPopUp();
     logger.info("Clicked on Yes in the PopUp");
   }
-  @Test(priority = 17,description = "Testing Upload ID card Picture")
+ // @Test(priority = 17,description = "Testing Upload ID card Picture")
   public void VguTest16(){
     homePage = new VGUHomePage(driver);
     driver.get(URL);
@@ -752,8 +752,58 @@ public class Vgutest  extends BaseTest{
     logger.info("Uploaded ID Card Picture");
     homePage.clickConfirmButton();
     logger.info("Clicked on Confirm Button");
-
   }
+ // @Test(priority = 18,description = "Student Requesting foe E ID card")
+  public void VguTest17(){
+    homePage = new VGUHomePage(driver);
+    driver.get(URL);
+    logger.info("Entered VGU Home Page");
+    homePage.studentEmailID();
+    logger.info("Entered Email Address");
+    homePage.studentPassword();
+    logger.info("Entered Password");
+    homePage.clickLogin();
+    logger.info("Clicked on Login");
+    homePage.clickOnRequestModule();
+    logger.info("Clicked on Request Management");
+    homePage.clickNewRequestButton();
+    logger.info("Clicked on New Request Button");
+    homePage.clickOnRequestTypeDropdown();
+    logger.info("Clicked on Request Type dropdown");
+    homePage.selectRequestType();
+    logger.info("Selected Request Type");
+    homePage.enterRequestDescription();
+    logger.info("Entered Description");
+    homePage.AttachPicture();
+    logger.info("Uploaded Picture");
+    homePage.clickRequestButton();
+    logger.info("Clicked on Request Button");
+    homePage.clickYesPopUp();
+    logger.info("Clicked on Yes in the PopUp");
+  }
+  @Test(priority = 19,description = "Admin Approving Request")
+  public void VguTest18() {
+    homePage = new VGUHomePage(driver);
+    driver.get(URL);
+    logger.info("Entered VGU Home Page");
+    homePage.enterEmail();
+    logger.info("Entered Email");
+    homePage.enterPassword();
+    logger.info("Entered Password");
+    homePage.clickLogin();
+    logger.info("Clicked on Login Button");
+    homePage.clickRequestManagement();
+    logger.info("Clicked on Request Management");
+    homePage.clickViewRequest();
+    logger.info("Clicked on Request View Button");
+    homePage.enterApproverComments();
+    logger.info("Entered Approver Comments");
+    homePage.clickApproveButton();
+    logger.info("Clicked on Approve Button");
+    homePage.clickYesPopUp();
+    logger.info("Clicked on Yes in the PopUp");
+  }
+
 
 
 

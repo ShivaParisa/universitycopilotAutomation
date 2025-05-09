@@ -275,7 +275,7 @@ public class VGUHomePage extends Basepage {
     WebElement SlotVersion2;
     @FindBy(xpath = "//button[text()='Next']")
     WebElement NextButton;
-    @FindBy(xpath = "(//img[@src='/assets/show.150c1f4b.svg'])[2]")
+    @FindBy(xpath = "(//img[contains(@class,'cursor-pointer ') and @src='/assets/show.150c1f4b.svg'])[13]")
     WebElement ViewIcon;
     @FindBy(xpath = "//button[text()='Upload ID Card Picture']")
     WebElement UploadIdButton;
@@ -283,6 +283,24 @@ public class VGUHomePage extends Basepage {
     WebElement UploadID;
     @FindBy(xpath = "//button[text()='Confirm']")
     WebElement confirmButton;
+    @FindBy(xpath = "//button[text()='New Request']")
+    WebElement NewRequest;
+    @FindBy(name="description")
+    WebElement RequestDescription;
+    @FindBy(id="pic-label")
+    WebElement UploadReceipt;
+    @FindBy(xpath = "//button[text()='Request']")
+    WebElement RequestButton;
+    @FindBy(xpath = "//span[text()='Requests']")
+    WebElement RequestModule;
+    @FindBy(xpath = "//img[@src='/assets/show.150c1f4b.svg']")
+    WebElement ClickRequestView;
+    @FindBy(id="comments")
+    WebElement RequestComments;
+    @FindBy(xpath = "//button[text()='Approve']")
+    WebElement Approve;
+
+
 
 
 
@@ -349,6 +367,10 @@ public class VGUHomePage extends Basepage {
     }
 
     public void clickRequestManagement() {
+        wait(3000);
+        Actions actions=new Actions(driver);
+        actions.moveToElement(requestmanagement).build().perform();
+        waitForElementToBeVisible(requestmanagement);
         requestmanagement.click();
     }
 
@@ -1157,9 +1179,10 @@ public class VGUHomePage extends Basepage {
         NextButton.click();
     }
     public void clickViewIcon(){
-        waitForElementTobeInteractable(ViewIcon);
+        wait(2000);
         Actions actions=new Actions(driver);
         actions.moveToElement(ViewIcon).build().perform();
+        waitForElementToBeVisible(ViewIcon);
         ViewIcon.click();
     }
     public void clickUploadIDCardButton(){
@@ -1175,6 +1198,65 @@ public class VGUHomePage extends Basepage {
         waitForElementTobeInteractable(confirmButton);
         confirmButton.click();
     }
+    public void studentEmailID(){
+        waitForElementToBeVisible(email);
+        email.sendKeys("phani123@gmail.com");
+    }
+    public void studentPassword(){
+        password.sendKeys("Vgu@1234");
+    }
+    public void clickNewRequestButton(){
+        NewRequest.click();
+    }
+    public void clickOnRequestTypeDropdown(){
+        By ele = By.xpath("//label[@for='request_type']/..//div[contains(@class,'select__dropdown-indicator')]");
+        waitForVisibility(ele);
+        driver.findElement(ele).click();
+    }
+    public void selectRequestType(){
+        By ele = By.xpath("//div[contains(@class, 'select__option') and text()='E-Identity Card Request']");
+        waitForVisibility(ele);
+        driver.findElement(ele).click();
+    }
+    public void clickSemesterDropdown(){
+        By ele = By.xpath("//label[@for='sem']/..//div[contains(@class,'select__dropdown-indicator')]");
+        waitForVisibility(ele);
+        driver.findElement(ele).click();
+    }
+    public void selectSemesterOption(){
+        By ele = By.xpath("//div[contains(@class, 'select__option') and text()='2']");
+        waitForVisibility(ele);
+        driver.findElement(ele).click();
+    }
+    public void enterRequestDescription(){
+        RequestDescription.sendKeys("E ID Card Requested using Automation Script");
+    }
+    public void AttachPicture(){
+        String Image="C:\\Users\\shiva\\Downloads\\teacher.jpg";
+        UploadReceipt.sendKeys(Image);
+    }
+    public void clickRequestButton(){
+        RequestButton.click();
+    }
+    public void clickOnRequestModule(){
+        waitForElementToBeVisible(RequestModule);
+        RequestModule.click();
+    }
+    public void clickViewRequest(){
+        waitForElementToBeVisible(ClickRequestView);
+        ClickRequestView.click();
+    }
+    public void enterApproverComments(){
+        waitForElementToBeVisible(RequestComments);
+        RequestComments.sendKeys("Approved using Automation Script");
+    }
+    public void clickApproveButton(){
+        Actions actions=new Actions(driver);
+        actions.moveToElement(Approve).build().perform();
+        Approve.click();
+    }
+
+
     }
 
 

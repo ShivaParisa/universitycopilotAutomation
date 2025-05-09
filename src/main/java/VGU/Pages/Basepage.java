@@ -33,6 +33,7 @@ public class Basepage {
                     executeScript("arguments[0].scrollIntoView(true);", element);
         }
 
+
     }
     public boolean isElementVisible(WebElement element){
         boolean flag = false;
