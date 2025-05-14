@@ -11,6 +11,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Collection;
+
 public class VGUHomePage extends Basepage {
     public VGUHomePage(WebDriver driver) {
         this.driver = driver;
@@ -299,6 +303,62 @@ public class VGUHomePage extends Basepage {
     WebElement RequestComments;
     @FindBy(xpath = "//button[text()='Approve']")
     WebElement Approve;
+    @FindBy(id="assign-course-68063162adc528401ade040e")
+    WebElement AssignCourse;
+    @FindBy(xpath = "//button[text()='Assign']")
+    WebElement AssignButton;
+    @FindBy(xpath = "//a[text()='Published']")
+    WebElement PublishedCourses;
+    @FindBy(id="unassign-course-68063162adc528401ade040e")
+    WebElement UnassignCourse;
+    @FindBy(xpath = "//div[@aria-label='Remove 24SBBAFIN']")
+    WebElement RemoveBatch;
+    @FindBy(id="unpublish-course-67fe3b9619c7c42bd62350f7")
+    WebElement UnpublishCourse;
+    @FindBy(xpath = "//button[text()='Upload']")
+    WebElement FeeUpload;
+    @FindBy(xpath = "//input[@type='file' and @accept='.xls, .xlsx']")
+    WebElement UploadFee;
+    @FindBy(id="autoGenerate")
+    WebElement CheckboxForTransaction;
+    @FindBy(xpath = "//a[contains(@href,'/ERP/dashboard')]")
+    WebElement StudentDashboard;
+    @FindBy(xpath = "//a[contains(@href,'/ERP/chat')]")
+    WebElement StudentChat;
+    @FindBy(xpath = "//a[contains(@href,'/ERP/announcement')]")
+    WebElement StudentAnnouncement;
+    @FindBy(xpath = "//a[contains(@href,'/ERP/examination')]")
+    WebElement StudentExamination;
+    @FindBy(xpath = "//a[contains(@href,'/ERP/student-grade-report')]")
+    WebElement StudentGradeReport;
+    @FindBy(xpath = "//a[contains(@href,'/ERP/fees')]")
+    WebElement StudentFee;
+    @FindBy(xpath = "//a[contains(@href,'/ERP/student-request')]")
+    WebElement StudentRequest;
+    @FindBy(xpath = "//a[@href='/LMS/virtual-class']")
+    WebElement StudentClass;
+    @FindBy(xpath = "//a[@href='/LMS/course']")
+    WebElement StudentCourse;
+    @FindBy(xpath = "//a[@href='/LMS/assignment']")
+    WebElement StudentAssignment;
+    @FindBy(xpath = "//a[@href='/LMS/discussion']")
+    WebElement StudentDiscussion;
+    @FindBy(xpath = "//a[@href='/LMS/library']")
+    WebElement StudentLibrary;
+    @FindBy(xpath = "//div[@class='sc-jhfVAM jpZEip']")
+    WebElement LMSTab;
+    @FindBy(xpath = "//button[@type='button']")
+    WebElement AnnouncementViewMoreButton;
+    @FindBy(xpath = "//button[text()='Back']")
+    WebElement BackButton;
+
+
+
+
+
+
+
+
 
 
 
@@ -359,6 +419,7 @@ public class VGUHomePage extends Basepage {
     }
 
     public void clickFeemanagement() {
+        waitForElementToBeVisible(feemanagement);
         feemanagement.click();
     }
 
@@ -1255,9 +1316,121 @@ public class VGUHomePage extends Basepage {
         actions.moveToElement(Approve).build().perform();
         Approve.click();
     }
+    public void clickAssignCourse(){
+        wait(2000);
+        Actions actions=new Actions(driver);
+        actions.moveToElement(AssignCourse).build().perform();
+        waitForElementToBeVisible(AssignCourse);
+        AssignCourse.click();
+    }
+    public void clickAssignButton(){
+        waitForElementToBeVisible(AssignButton);
+        AssignButton.click();
+    }
+    public void clickPublishedCourses(){
+        waitForElementToBeVisible(PublishedCourses);
+        PublishedCourses.click();
+    }
+    public void clickUnassignCourse(){
+        wait(2000);
+        Actions actions=new Actions(driver);
+        actions.moveToElement(UnassignCourse).build().perform();
+        UnassignCourse.click();
+    }
+    public void clickRemoveBatch(){
+        waitForElementToBeVisible(RemoveBatch);
+        RemoveBatch.click();
+    }
+    public void clickUnPublishCourse(){
+        wait(2000);
+        Actions actions=new Actions(driver);
+        actions.moveToElement(UnpublishCourse);
+        UnpublishCourse.click();
+    }
+    public void clickFeeUploadButton(){
+        waitForElementToBeVisible(FeeUpload);
+        FeeUpload.click();
+    }
+    public void clickUploadButton(){
+        String FeeFile="C:\\Users\\shiva\\Downloads\\vgu fees upload.xlsx";
+        UploadFee.sendKeys(FeeFile);
+    }
+    public void clickCheckbox(){
+        CheckboxForTransaction.click();
+    }
+    public void UploadTransactionDetails(){
+        String TransactionFile="C:\\Users\\shiva\\Downloads\\vgu transaction upload.xlsx";
+        UploadFee.sendKeys(TransactionFile);
+    }
+    public void clickOnDashboard(){
+        waitForElementToBeVisible(StudentDashboard);
+        StudentDashboard.click();
+    }
+    public void clickOnChat(){
+        waitForElementToBeVisible(StudentChat);
+        StudentChat.click();
+    }
+    public void clickOnAnnouncements(){
+        waitForElementToBeVisible(StudentAnnouncement);
+        StudentAnnouncement.click();
+    }
+    public void clickOnExamination(){
+        waitForElementToBeVisible(StudentExamination);
+        StudentExamination.click();
+    }
+    public void clickOnStudentGradeReport(){
+        waitForElementToBeVisible(StudentGradeReport);
+        StudentGradeReport.click();
+    }
+    public void clickOnFees(){
+        waitForElementToBeVisible(StudentFee);
+        StudentFee.click();
+    }
+    public void clickOnRequests(){
+        waitForElementToBeVisible(StudentRequest);
+        StudentRequest.click();
+    }
+    public void clickOnLMSTab(){
+        waitForElementToBeVisible(LMSTab);
+        LMSTab.click();
+    }
+    public void clickOnVirtualClass(){
+        waitForElementToBeVisible(StudentClass);
+        StudentClass.click();
+    }
+    public void clickOnStudentCourse(){
+        waitForElementToBeVisible(StudentCourse);
+        StudentCourse.click();
+    }
+    public void clickOnAssignment(){
+        waitForElementToBeVisible(StudentAssignment);
+        StudentAssignment.click();
+    }
+    public void clickOnDiscussion(){
+        waitForElementToBeVisible(StudentDiscussion);
+        StudentDiscussion.click();
+    }
+    public void clickOnLibrary(){
+        waitForElementToBeVisible(StudentLibrary);
+        StudentLibrary.click();
+    }
+    public void clickAnnouncementViewMoreButton(){
+        waitForElementToBeVisible(AnnouncementViewMoreButton);
+        AnnouncementViewMoreButton.click();
+    }
+    public void clickBackButton(){
+        wait(5000);
+        BackButton.click();
+        wait(2000);
+    }
+
 
 
     }
+
+
+
+
 
 
 

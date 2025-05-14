@@ -781,7 +781,7 @@ public class Vgutest  extends BaseTest{
     homePage.clickYesPopUp();
     logger.info("Clicked on Yes in the PopUp");
   }
-  @Test(priority = 19,description = "Admin Approving Request")
+ // @Test(priority = 19,description = "Admin Approving Request")
   public void VguTest18() {
     homePage = new VGUHomePage(driver);
     driver.get(URL);
@@ -803,7 +803,209 @@ public class Vgutest  extends BaseTest{
     homePage.clickYesPopUp();
     logger.info("Clicked on Yes in the PopUp");
   }
+  //@Test(priority = 20,description = "Assigning Course to a batch")
+  public void VguTest19() {
+    homePage = new VGUHomePage(driver);
+    driver.get(URL);
+    logger.info("Entered VGU Home Page");
+    homePage.enterEmail();
+    logger.info("Entered Email");
+    homePage.enterPassword();
+    logger.info("Entered Password");
+    homePage.clickLogin();
+    logger.info("Clicked on Login Button");
+    homePage.clickCourse();
+    logger.info("Clicked on Course");
+    homePage.clickPublishedCourses();
+    logger.info("Clicked on Published Courses");
+    homePage.clickAssignCourse();
+    logger.info("Clicked on Assign course");
+    homePage.clickProgramDropdown();
+    logger.info("Clicked on Program Dropdown");
+    homePage.selectProgramOption();
+    logger.info("Selected Program");
+    homePage.clickBatch();
+    logger.info("Clicked on Batch Dropdown");
+    homePage.selectBatchOption();
+    logger.info("Selected Batch");
+    homePage.clickAssignButton();
+    logger.info("Clicked On Assign Button");
+    homePage.clickYesInPopUp();
+    logger.info("Clicked on Yes in the popup");
+  }
+ // @Test(priority = 21,description = "UnAssigning Course from a batch")
+  public void VguTest20() {
+    homePage = new VGUHomePage(driver);
+    driver.get(URL);
+    logger.info("Entered VGU Home Page");
+    homePage.enterEmail();
+    logger.info("Entered Email");
+    homePage.enterPassword();
+    logger.info("Entered Password");
+    homePage.clickLogin();
+    logger.info("Clicked on Login Button");
+    homePage.clickCourse();
+    logger.info("Clicked on Course");
+    homePage.clickPublishedCourses();
+    logger.info("Clicked on Published Courses");
+    homePage.clickUnassignCourse();
+    logger.info("Clicked on UnassignCourse");
+    homePage.clickRemoveBatch();
+    logger.info("Batch Removed");
+    homePage.clickSave();
+    logger.info("Clicked on Save Button");
+    homePage.clickYesInPopUp();
+    logger.info("Clicked on Yes in the popup");
+  }
+ // @Test(priority = 22,description = "Testing Unpublishing Course")
+  public void VguTest21() {
+    homePage = new VGUHomePage(driver);
+    driver.get(URL);
+    logger.info("Entered VGU Home Page");
+    homePage.enterEmail();
+    logger.info("Entered Email");
+    homePage.enterPassword();
+    logger.info("Entered Password");
+    homePage.clickLogin();
+    logger.info("Clicked on Login Button");
+    homePage.clickCourse();
+    logger.info("Clicked on Course");
+    homePage.clickPublishedCourses();
+    logger.info("Clicked on Published Courses");
+    homePage.clickUnPublishCourse();
+    logger.info("Clicked on Unpublish Course");
+    homePage.clickYesInPopUp();
+    logger.info("Clicked on Yes in the PopUp");
+  }
+  //@Test(priority = 23,description = "Uploading Fee Details")
+  public void VguTest22() {
+    homePage = new VGUHomePage(driver);
+    driver.get(URL);
+    logger.info("Entered VGU Home Page");
+    homePage.enterEmail();
+    logger.info("Entered Email");
+    homePage.enterPassword();
+    logger.info("Entered Password");
+    homePage.clickLogin();
+    logger.info("Clicked on Login Button");
+    homePage.clickFeemanagement();
+    logger.info("Clicked on Fee Management");
+    homePage.clickFeeUploadButton();
+    logger.info("Click on Upload Fee Button");
+    homePage.facultyDropdown();
+    logger.info("Clicked on Faculty Dropdown");
+    homePage.selectFacultyOption();
+    logger.info("Selected Faculty Option");
+    homePage.clickProgramDropdown();
+    logger.info("Clicked on Program Dropdown");
+    homePage.selectProgramOption();
+    logger.info("Selected Program");
+    homePage.clickBatch();
+    logger.info("Clicked on Batch Dropdown");
+    homePage.selectBatchOption();
+    logger.info("Selected Batch");
+    homePage.clickUploadButton();
+    logger.info("Uploaded Fee details");
+    homePage.clickAddButton();
+    logger.info("Clicked on Add Button");
+    homePage.clickYesInPopUp();
+    logger.info("Clicked on Yes in the PopUp");
+  }
+//  @Test(priority = 24,description = "Uploading Fee Transactions")
+  public void VguTest23() {
+    homePage = new VGUHomePage(driver);
+    driver.get(URL);
+    logger.info("Entered VGU Home Page");
+    homePage.enterEmail();
+    logger.info("Entered Email");
+    homePage.enterPassword();
+    logger.info("Entered Password");
+    homePage.clickLogin();
+    logger.info("Clicked on Login Button");
+    homePage.clickFeemanagement();
+    logger.info("Clicked on Fee Management");
+    homePage.clickFeeUploadButton();
+    logger.info("Click on Upload Fee Button");
+    homePage.facultyDropdown();
+    logger.info("Clicked on Faculty Dropdown");
+    homePage.selectFacultyOption();
+    logger.info("Selected Faculty Option");
+    homePage.clickProgramDropdown();
+    logger.info("Clicked on Program Dropdown");
+    homePage.selectProgramOption();
+    logger.info("Selected Program");
+    homePage.clickBatch();
+    logger.info("Clicked on Batch Dropdown");
+    homePage.selectBatchOption();
+    logger.info("Selected Batch");
+    homePage.clickCheckbox();
+    logger.info("Checked the Fee Transaction Check Box");
+    homePage.UploadTransactionDetails();
+    logger.info("Uploaded Fee Transactions");
+    homePage.clickAddButton();
+    logger.info("Clicked on Add Button");
+    homePage.clickYesInPopUp();
+    logger.info("Clicked on Yes in the PopUp");
+  }
+  //@Test(priority = 25,description = "Verifying Navigation Links")
+  public void VguTest24() {
+    homePage = new VGUHomePage(driver);
+    driver.get(URL);
+    logger.info("Entered VGU Home Page");
+    homePage.studentEmailID();
+    logger.info("Entered Email Address");
+    homePage.studentPassword();
+    logger.info("Entered Password");
+    homePage.clickLogin();
+    logger.info("Clicked on Login");
+    homePage.clickOnDashboard();
+    logger.info("Clicked on Dashboard");
+    homePage.clickOnChat();
+    logger.info("Clicked on Chat");
+    homePage.clickOnAnnouncements();
+    logger.info("Clicked on Announcement");
+    homePage.clickOnExamination();
+    logger.info("Clicked on Examination");
+    homePage.clickOnStudentGradeReport();
+    logger.info("Clicked on Grade Report");
+    homePage.clickOnFees();
+    logger.info("Clicked on Fee");
+    homePage.clickOnRequests();
+    logger.info("Clicked on Requests");
+    homePage.clickOnDashboard();
+    logger.info("Clicked on Dashboard");
+    homePage.clickOnLMSTab();
+    logger.info("Clicked on LMS Tab");
+    homePage.clickOnVirtualClass();
+    logger.info("Clicked on Virtual Class");
+    homePage.clickOnStudentCourse();
+    logger.info("Clicked on Course");
+    homePage.clickOnAssignment();
+    logger.info("Clicked on Assignment");
+    homePage.clickOnDiscussion();
+    logger.info("Clicked on Discussion");
+    homePage.clickOnLibrary();
+    logger.info("Clicked on Library");
 
+  }
+  @Test(priority = 26,description = "Verifying Navigation Links")
+  public void VguTest25() {
+    homePage = new VGUHomePage(driver);
+    driver.get(URL);
+    logger.info("Entered VGU Home Page");
+    homePage.studentEmailID();
+    logger.info("Entered Email Address");
+    homePage.studentPassword();
+    logger.info("Entered Password");
+    homePage.clickLogin();
+    logger.info("Clicked on Login");
+    homePage.clickOnAnnouncements();
+    logger.info("Clicked on Announcements");
+    homePage.clickAnnouncementViewMoreButton();
+    logger.info("Clicked on View More in Announcement Tab");
+    homePage.clickBackButton();
+    logger.info("Clicked on Back Button");
+  }
 
 
 
