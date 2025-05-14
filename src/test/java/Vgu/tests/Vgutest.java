@@ -753,7 +753,7 @@ public class Vgutest  extends BaseTest{
     homePage.clickConfirmButton();
     logger.info("Clicked on Confirm Button");
   }
- // @Test(priority = 18,description = "Student Requesting foe E ID card")
+ // @Test(priority = 18,description = "Student Requesting for E ID card")
   public void VguTest17(){
     homePage = new VGUHomePage(driver);
     driver.get(URL);
@@ -988,7 +988,7 @@ public class Vgutest  extends BaseTest{
     logger.info("Clicked on Library");
 
   }
-  @Test(priority = 26,description = "Verifying Navigation Links")
+  @Test(priority = 26,description = "Viewing Request")
   public void VguTest25() {
     homePage = new VGUHomePage(driver);
     driver.get(URL);
