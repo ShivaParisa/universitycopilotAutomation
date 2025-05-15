@@ -351,6 +351,12 @@ public class VGUHomePage extends Basepage {
     WebElement AnnouncementViewMoreButton;
     @FindBy(xpath = "//button[text()='Back']")
     WebElement BackButton;
+    @FindBy(xpath = "//div[@id='cell-9-undefined']/..//img[@src='/assets/show.150c1f4b.svg']")
+    WebElement ViewStudent;
+    @FindBy(xpath = "//button[text()='Edit Profile']")
+    WebElement EditProfile;
+    @FindBy(xpath = "//button[text()='Save Changes']")
+    WebElement SaveChanges;
 
 
 
@@ -1422,6 +1428,40 @@ public class VGUHomePage extends Basepage {
         wait(5000);
         BackButton.click();
         wait(2000);
+    }
+    public void ViewStudent(){
+        wait(5000);
+        Actions actions=new Actions(driver);
+        actions.moveToElement(ViewStudent).build().perform();
+        ViewStudent.click();
+    }
+    public void clickEditProfile(){
+        waitForElementToBeVisible(EditProfile);
+        EditProfile.click();
+    }
+    public void updateFirstName(){
+        Actions actions=new Actions(driver);
+        actions.moveToElement(StudentName).build().perform();
+        waitForElementToBeVisible(StudentName);
+        StudentName.clear();
+        StudentName.sendKeys("Mohit");
+    }
+    public void updateFatherName(){
+        Actions actions=new Actions(driver);
+        actions.moveToElement(FatherName).build().perform();
+        FatherName.clear();
+        FatherName.sendKeys("RamaRao");
+    }
+    public void updateMotherName(){
+        Actions actions=new Actions(driver);
+        actions.moveToElement(MotherName).build().perform();
+        MotherName.clear();
+        MotherName.sendKeys("Kumari");
+    }
+    public void clickSaveChanges(){
+        Actions actions=new Actions(driver);
+        actions.moveToElement(SaveChanges).build().perform();
+        SaveChanges.click();
     }
 
 

@@ -988,7 +988,7 @@ public class Vgutest  extends BaseTest{
     logger.info("Clicked on Library");
 
   }
-  @Test(priority = 26,description = "Viewing Request")
+ // @Test(priority = 26,description = "Viewing Request")
   public void VguTest25() {
     homePage = new VGUHomePage(driver);
     driver.get(URL);
@@ -1005,6 +1005,36 @@ public class Vgutest  extends BaseTest{
     logger.info("Clicked on View More in Announcement Tab");
     homePage.clickBackButton();
     logger.info("Clicked on Back Button");
+  }
+  @Test(priority = 27,description = "Update Student Details in User Management")
+  public void VguTest26() {
+    homePage = new VGUHomePage(driver);
+    driver.get(URL);
+    logger.info("Entered VGU Home Page");
+    homePage.enterEmail();
+    logger.info("Entered Email");
+    homePage.enterPassword();
+    logger.info("Entered Password");
+    homePage.clickLogin();
+    logger.info("Clicked on Login Button");
+    homePage.clickUserManagement();
+    logger.info("Clicked on User Management");
+    homePage.clickStudentTab();
+    logger.info("Clicked on Student Tab");
+    homePage.ViewStudent();
+    logger.info("Clicked on View Student");
+    homePage.clickEditProfile();
+    logger.info("Clicked on Edit Profile");
+    homePage.updateFirstName();
+    logger.info("Updated Name");
+    homePage.updateFatherName();
+    logger.info("Updated Father's Name");
+    homePage.updateMotherName();
+    logger.info("Updated Mother's Name");
+    homePage.clickSaveChanges();
+    logger.info("Clicked on Save Changes");
+    homePage.clickYesInPopUp();
+    logger.info("Clicked on Yes in the popup");
   }
 
 
