@@ -357,6 +357,11 @@ public class VGUHomePage extends Basepage {
     WebElement EditProfile;
     @FindBy(xpath = "//button[text()='Save Changes']")
     WebElement SaveChanges;
+    @FindBy(xpath = "//div[@id='cell-7-undefined']/..//img[@src='/assets/edit.fe634b0c.svg']")
+    WebElement Status;
+    @FindBy(xpath = "//div[@id='cell-8-undefined']/..//img[@src='/assets/show.150c1f4b.svg']")
+    WebElement ViewStaff;
+
 
 
 
@@ -1462,6 +1467,32 @@ public class VGUHomePage extends Basepage {
         Actions actions=new Actions(driver);
         actions.moveToElement(SaveChanges).build().perform();
         SaveChanges.click();
+    }
+    public void changeStatusOfStaff(){
+        wait(2000);
+        Actions actions=new Actions(driver);
+        actions.moveToElement(Status).build().perform();
+        Status.click();
+    }
+    public void clickOnRoleDropdownForUpdating(){
+        WebElement dropdown = driver.findElement( By.xpath("//label[@for='role']/..//div[contains(@class,'select__dropdown-indicator')]"));
+        Actions actions=new Actions(driver);
+        actions.moveToElement(dropdown).build().perform();
+        waitForElementTobeInteractable(dropdown);
+        try { Thread.sleep(1000); } catch (InterruptedException e) {}
+        dropdown.click();
+    }
+    public void UpdateRole(){
+        By ele = By.xpath("//div[contains(@class, 'select__option') and text()='Examination Controller']");
+        waitForVisibility(ele);
+        try { Thread.sleep(1000); } catch (InterruptedException e) {}
+        driver.findElement(ele).click();
+    }
+    public void clickOnViewStaff(){
+        wait(2000);
+        Actions actions=new Actions(driver);
+        actions.moveToElement(ViewStaff).build().perform();
+        ViewStaff.click();
     }
 
 

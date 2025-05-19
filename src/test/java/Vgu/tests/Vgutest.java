@@ -1006,7 +1006,7 @@ public class Vgutest  extends BaseTest{
     homePage.clickBackButton();
     logger.info("Clicked on Back Button");
   }
-  @Test(priority = 27,description = "Update Student Details in User Management")
+  //@Test(priority = 27,description = "Update Student Details in User Management")
   public void VguTest26() {
     homePage = new VGUHomePage(driver);
     driver.get(URL);
@@ -1035,6 +1035,51 @@ public class Vgutest  extends BaseTest{
     logger.info("Clicked on Save Changes");
     homePage.clickYesInPopUp();
     logger.info("Clicked on Yes in the popup");
+  }
+  //@Test(priority = 28,description = "Changing Status of the Staff")
+  public void VguTest27() {
+    homePage = new VGUHomePage(driver);
+    driver.get(URL);
+    logger.info("Entered VGU Home Page");
+    homePage.enterEmail();
+    logger.info("Entered Email");
+    homePage.enterPassword();
+    logger.info("Entered Password");
+    homePage.clickLogin();
+    logger.info("Clicked on Login Button");
+    homePage.clickUserManagement();
+    logger.info("Clicked on User Management");
+    homePage.changeStatusOfStaff();
+    logger.info("Change Status of the Staff");
+    homePage.clickYesInPopUp();
+    logger.info("Clicked Yes in the PopUp");
+  }
+  @Test(priority = 29,description = "Updating Staff Details through User Management")
+  public void VguTest28() {
+    homePage = new VGUHomePage(driver);
+    driver.get(URL);
+    logger.info("Entered VGU Home Page");
+    homePage.enterEmail();
+    logger.info("Entered Email");
+    homePage.enterPassword();
+    logger.info("Entered Password");
+    homePage.clickLogin();
+    logger.info("Clicked on Login Button");
+    homePage.clickUserManagement();
+    logger.info("Clicked On User Management");
+    homePage.clickOnViewStaff();
+    logger.info("Clicked on View Staff");
+    homePage.clickEditProfile();
+    logger.info("Clicked on Edit Profile");
+    homePage.clickOnRoleDropdownForUpdating();
+    logger.info("Clicked on Role Dropdown");
+    homePage.UpdateRole();
+    logger.info("Updated Role");
+    homePage.clickSaveChanges();
+    logger.info("Clicked on Save Changes");
+    homePage.clickYesInPopUp();
+    logger.info("Clicked on Yes in the popup");
+
   }
 
 
